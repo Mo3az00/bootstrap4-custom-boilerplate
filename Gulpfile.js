@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    server = require('gulp-server-livereload');
 
 // Copy Font Awesome font files
 gulp.task('copy', function() {
@@ -53,6 +54,16 @@ gulp.task('scss', function() {
         .pipe(gulp.dest('assets/dist/css/'))
 });
 
+// Run local webserver with live-reloading
+gulp.task('webserver', function() {
+    gulp.src('./')
+        .pipe(server({
+            livereload: true,
+            directoryListing: false,
+            open: true
+        }));
+});
+
 // Setup task for a new project
 gulp.task('setup', ['copy', 'compress-js', 'combine-js', 'scss']);
 
@@ -60,4 +71,5 @@ gulp.task('setup', ['copy', 'compress-js', 'combine-js', 'scss']);
 gulp.task('watch', function() {
     gulp.watch('assets/src/scss/**/*.scss', ['scss']);
     gulp.watch('assets/src/js/*.js', ['compress-js', 'combine-js'])
+    gulp.run('webserver');
 });
