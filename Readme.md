@@ -16,6 +16,8 @@ Run the following command to fix a problem with the file watcher that is used to
 
 ```echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p```
 
+**Installation Steps:***
+
 * Install NodeJS, if you haven't done already. I suggest to use the [Node Version Manager](https://github.com/creationix/nvm) script.
 * Update npm to the newest possible version:<br>
  ```npm i -g npm && npm -g update```
