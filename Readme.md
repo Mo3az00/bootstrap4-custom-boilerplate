@@ -16,6 +16,8 @@ Run the following command to fix a problem with the file watcher that is used to
 
 ```echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p```
 
+**Installation Steps:**
+
 * Install NodeJS, if you haven't done already. I suggest to use the [Node Version Manager](https://github.com/creationix/nvm) script.
 * Update npm to the newest possible version:<br>
  ```npm i -g npm && npm -g update```
@@ -42,5 +44,5 @@ The only thing you need to do is to run the following command in your terminal:
 * All assets (SCSS, JavaScript, Images, etc.) should be stored in the "/assets/" directory of your project.
 * The SCSS files are located in "/assets/src/scss/" and will be compiled to "/assets/dist/css/".
 * The JavaScript files are located in "/assets/src/js/" and the ___app.js___ will be compiled to "/assets/dist/js/app.min.js".
-
+* The Images should be stored in the "/assets/dist/images/" folder.
 
