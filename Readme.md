@@ -42,5 +42,5 @@ The only thing you need to do is to run the following command in your terminal:
 * All assets (SCSS, JavaScript, Images, etc.) should be stored in the "/assets/" directory of your project.
 * The SCSS files are located in "/assets/src/scss/" and will be compiled to "/assets/dist/css/".
 * The JavaScript files are located in "/assets/src/js/" and the ___app.js___ will be compiled to "/assets/dist/js/app.min.js".
-
+* The Images should be stored in the "/assets/dist/images/" folder.
 
