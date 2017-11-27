@@ -1,7 +1,7 @@
 // Load all needed modules
 var gulp = require('gulp'),
     copy = require('gulp-copy'),
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify-es').default,
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
@@ -18,16 +18,16 @@ gulp.task('copy', function() {
 });
 
 // Compress JS files
-// gulp.task('compress-js', function() {
-//     gulp.src([
-//         'assets/src/js/app.js'
-//     ])
-//         .pipe(uglify())
-//         .pipe(rename(function(path) {
-//             path.extname = '.min.js';
-//         }))
-//         .pipe(gulp.dest('assets/build/js/'))
-// });
+gulp.task('compress-js', function() {
+    gulp.src([
+        'assets/src/js/app.js'
+    ])
+        .pipe(uglify())
+        .pipe(rename(function(path) {
+            path.extname = '.min.js';
+        }))
+        .pipe(gulp.dest('assets/build/js/'))
+});
 
 // Combine JS files
 gulp.task('combine-js', function() {
@@ -35,7 +35,7 @@ gulp.task('combine-js', function() {
         './node_modules/jquery/dist/jquery.min.js',
         './node_modules/popper.js/dist/umd/popper.min.js',
         './node_modules/bootstrap/dist/js/bootstrap.min.js',
-        './assets/src/js/app.js'
+        './assets/build/js/app.min.js'
     ])
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest('assets/dist/js/'));
@@ -65,11 +65,11 @@ gulp.task('webserver', function() {
 });
 
 // Setup task for a new project
-gulp.task('setup', ['copy', 'combine-js', 'scss']);
+gulp.task('setup', ['copy', 'compress-js', 'combine-js', 'scss']);
 
 // Watcher task to look for file changes
 gulp.task('watch', function() {
     gulp.watch('assets/src/scss/**/*.scss', ['scss']);
-    gulp.watch('assets/src/js/*.js', ['combine-js'])
+    gulp.watch('assets/src/js/*.js', ['compress-js', 'combine-js'])
     gulp.run('webserver');
 });
