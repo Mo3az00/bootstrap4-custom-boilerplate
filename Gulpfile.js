@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
+    rimraf = require('gulp-rimraf'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     watch = require('gulp-watch'),
@@ -64,8 +65,14 @@ gulp.task('webserver', function() {
         }));
 });
 
+// Remove .gitignore files for "dist" on setup
+gulp.task('cleanup', function() {
+    gulp.src('assets/dist/**/.gitignore', { read: false }) // much faster
+        .pipe(rimraf());
+});
+
 // Setup task for a new project
-gulp.task('setup', ['copy', 'compress-js', 'combine-js', 'scss']);
+gulp.task('setup', ['copy', 'compress-js', 'combine-js', 'scss', 'cleanup']);
 
 // Watcher task to look for file changes
 gulp.task('watch', function() {
