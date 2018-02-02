@@ -50,6 +50,22 @@ const uglify = new webpack.optimize.UglifyJsPlugin({
   compress: { warnings: false }
 });
 
+// Remove this loader if you don't want to expose jQuery to the global window object.
+// But: Don't forget to also remove it in the rules[] array then.
+const expose = {
+  test: require.resolve('jquery'),
+  use: [
+    {
+      loader: 'expose-loader',
+      options: 'jQuery'
+    },
+    {
+      loader: 'expose-loader',
+      options: '$'
+    }
+  ]
+};
+
 // bundle everything
 const config = {
   entry: {
@@ -61,7 +77,7 @@ const config = {
     filename: '[name].bundle.js'
   },
   module: {
-    rules: [javascript, styles, fontAwesome]
+    rules: [expose, javascript, styles, fontAwesome]
   },
   plugins: [
     new ExtractTextPlugin('style.css'),
