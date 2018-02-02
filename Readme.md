@@ -1,12 +1,20 @@
 # Custom Bootstrap 4 Boilerplate
 
-This boilerplate was created to quickly start any new project using version 4 of the famous [Bootstrap Framework](http://getbootstrap.com/), the [Font Awesome](http://fontawesome.io/) icons and the [Gulp](https://gulpjs.com/) build tool.
+This boilerplate was created to quickly start any new project using version 4 of the famous [Bootstrap Framework](http://getbootstrap.com/) and the [Font Awesome](http://fontawesome.io/) icons
+
+## What's included?
+
+* [Bootstrap 4](https://getbootstrap.com/)
+* [Font Awesome 4](https://fontawesome.com/)
+* [WebPack](https://fontawesome.com/):
+    * [Babel](https://babeljs.io/)
+    * [Autoprefixer](https://github.com/postcss/autoprefixer)
+    * [SCSS](http://sass-lang.com/)
 
 ## Requirements
 
 * NodeJS 8+
-* npm package manager  
-* [Gulp](https://gulpjs.com/)
+* npm package manager
 
 ## Installation
 
@@ -18,31 +26,30 @@ Run the following command to fix a problem with the file watcher that is used to
 
 **Installation Steps:**
 
-* Install NodeJS, if you haven't done already. I suggest to use the [Node Version Manager](https://github.com/creationix/nvm) script.
-* Update npm to the newest possible version:<br>
- ```npm i -g npm && npm -g update```
-* Install a global gulp package:<br>
- ```npm i -g gulp```
+* Install NodeJS, if you haven't done already. I suggest to use the [Node Version Manager](https://github.com/creationix/nvm).
 * Download the ZIP file from [here](https://github.com/noreading/bootstrap4-custom-boilerplate/archive/master.zip).
 * Extract the files to your project directory:<br>
  ```unzip bootstrap4-custom-boilerplate.zip```
 * Run the setup script:<br>
  ```npm run setup```
 
-## Editing SCSS and JS
+## Editing SCSS + JavaScript
 
-### Watching for file changes
+### CSS
 
-As [Gulp](https://gulpjs.com/) is already loaded and a generic ___Gulpfile___ is in the root project directory, you can use the built-in watcher to compile everything for you, while you edit.
+The SCSS files are located in the __/assets/src/sass/__ directory.  
 
-The only thing you need to do is to run the following command in your terminal:
+### JavaScript
 
-```gulp watch```
+The JavaScript files are located in the __/assets/src/js/__ directory.  
+Add your own code to the __/assets/src/js/app.js__.
 
-### Asset Management
+### Watching for changes
 
-* All assets (SCSS, JavaScript, Images, etc.) should be stored in the "/assets/" directory of your project.
-* The SCSS files are located in "/assets/src/scss/" and will be compiled to "/assets/dist/css/".
-* The JavaScript files are located in "/assets/src/js/" and the ___app.js___ will be compiled to "/assets/dist/js/app.min.js".
-* The Images should be stored in the "/assets/dist/images/" folder.
+Every time you want to change CSS or JavaScript file you should use the __watch__ command, so that you don't have to start the build process manually. The __watch__ command will recompile all CSS and JavaScript files, if you change them.
 
+```npm run watch```
+
+## License
+
+This project is available under [MIT License](./License.md) and is free for private and commercial usage.

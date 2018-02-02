@@ -14,21 +14,29 @@
 
     <!-- Search Engine Optimization -->
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="A custom Bootstrap 4 boilerplate to reduce the hazzle of setting up new projects with Bootstrap 4 and Font Awesome." />
+    <meta name="description" content="A custom Bootstrap 4 boilerplate to reduce the hazzle of setting up new projects with Bootstrap 4, Webpack, Babel and Font Awesome." />
 
-    <link rel="stylesheet" type="text/css" href="/assets/dist/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/dist/style.css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">
+                            Home <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -37,7 +45,12 @@
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <a class="nav-link dropdown-toggle"
+                           href="http://example.com"
+                           id="dropdown01"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">Dropdown</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
@@ -46,7 +59,10 @@
                     </li>
                 </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2"
+                       type="text"
+                       placeholder="Search"
+                       aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -61,21 +77,18 @@
                 All you get is this text and a mostly barebones HTML document.
             </p>
             <p>
-                You can customize which Bootstrap features should be loaded,<br>
-                by modifying the file <i>/assets/src/scss/_bootstrap.scss</i>.
-            </p>
-            <p>
                 If you want to override Bootstrap variables, freel free to use<br>
-                the file <i>/assets/src/scss/_bootstrap-variables.scss</i>.
+                the file <i>/assets/src/scss/_bootstrap-custom.scss</i>.
             </p>
             <p>
-                <i class="fa fa-home"></i> Font Awesome is already built-in!<br>
-
+                <i class="fa fa-home"></i> Font Awesome is already built-in and Babel is used<br>
+                to write code with new JavaScripts standards.
+                <br>
             </p>
         </div>
 
     </main><!-- /.container -->
 
-    <script src="/assets/dist/js/app.min.js"></script>
+    <script src="/assets/dist/app.bundle.js"></script>
 </body>
 </html>

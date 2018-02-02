@@ -1,26 +1,32 @@
 {
   "name": "bootstrap4-custom-boilerplate",
-  "description": "A custom boilerplate created for Bootstrap 4, using npm and SCSS",
-  "version": "1.0.0",
-  "license": "UNLICENSED",
-  "devDependencies": {
-    "bootstrap": "^4.0.0-beta.3",
+  "description": "A custom boilerplate created for Bootstrap 4, using webpack",
+  "version": "2.0.0",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-copy": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-rimraf": "^0.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-server-livereload": "^1.9.2",
-    "gulp-sourcemaps": "^2.6.3",
-    "gulp-uglify-es": "^0.1.6",
-    "gulp-watch": "^4.3.11",
     "jquery": "^1.9.1",
-    "node-sass": "^4.7.2",
     "popper.js": "^1.13.0"
   },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "autoprefixer": "^7.2.5",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0"
+  },
   "scripts": {
-    "setup": "npm install && gulp setup"
-  }
+    "setup": "npm install && npm build",
+    "build": "webpack --display-max-modules 0",
+    "watch": "webpack -w --display-max-modules 0"
+  },
+  "author": "Dominik Hanke",
+  "license": "MIT"
 }
